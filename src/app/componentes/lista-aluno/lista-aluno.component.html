@@ -1,0 +1,33 @@
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Alunos da Turma: {{id_turma}}</h5>
+    <button class="btn btn-danger" (click)="navegarCriacaoLivro()">Cadastrar aluno</button>
+   <div style="height: 300px; overflow: auto;">
+    <table class="table">
+      <thead>
+        <tr >
+          <th scope="col">Código</th>
+          <th scope="col">Nome do aluno</th>
+          <th scope="col">Nome do Responsável</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let aluno of alunos">
+          <th scope="row">{{aluno.ra_aluno}}</th>
+          <td>{{aluno.al_nome}}</td>
+          <td>{{aluno.al_responsavel}}</td>
+          <td>{{aluno.al_cidade}}</td>
+          <td><i  routerLink="/turma/aluno/{{id_turma}}/edicao/{{aluno.ra_aluno}}" class="fas fa-edit text-info" ></i>
+              <i routerLink="/turma/aluno/delete/{{id_turma}}/{{aluno.ra_aluno}}" class="fas fa-trash-alt text-danger mx-2" ></i>
+
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+

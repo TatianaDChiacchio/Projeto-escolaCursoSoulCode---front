@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Cadastro de nova Turma</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição da turma</label>
+        <input type="text" class="form-control" name="tu_descricao"[(ngModel)]="turma.tu_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Nome da turma</label>
+        <input type="text" class="form-control"  name="tu_nome"[(ngModel)]="turma.tu_nome">
+      </div>
+      <button (click) = "cadastroTurma()" class="btn btn-primary ">Cadastrar</button>
+      <button (click) = "cancelarCadastro()" class="btn btn-secondary mx-3">Cancelar</button>
+    </form>
+
+  </div>
+</div>
