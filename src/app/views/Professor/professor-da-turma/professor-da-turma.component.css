@@ -1,0 +1,21 @@
+*{
+  margin:0
+}
+.minhaModal{
+  display: flex;
+  position: fixed;
+  left: 500px;
+  top:auto;
+  width: 400px;
+  height: 200px;
+  background-color: rgb(228, 238, 238);
+  border: 1px solid rgb(177, 172, 172);
+}
+
+.select{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ margin-left: 150px;
+}

@@ -1,0 +1,31 @@
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Alunos da Turma: {{id_turma}}</h5>
+    <button routerLink="/aluno/lista" class="btn btn-danger" >Controle de Alunos</button>
+   <div style="height: 300px; overflow: auto;">
+    <table class="table">
+      <thead>
+        <tr >
+          <th scope="col">RA do aluno</th>
+          <th scope="col">Nome do aluno</th>
+          <th scope="col">Responsável pelo Aluno</th>
+          <th scope="col">Cidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let aluno of alunos">
+          <th scope="row">{{aluno.ra_aluno}}</th>
+          <td>{{aluno.al_nome}}</td>
+          <td>{{aluno.al_responsavel}}</td>
+          <td>{{aluno.al_cidade}}</td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+
+
+

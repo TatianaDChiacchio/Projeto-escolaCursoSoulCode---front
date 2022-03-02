@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Aluno } from '../models/alunoModel';
 import { Turma } from '../models/turmaModel'
-import { AlunosComTurma } from '../models/alunosComTurmaModel';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,6 @@ export class AlunoService {
 
   }
 
-
   buscarTodosAlunos():Observable<any>{
 
     const url = `${this.baseUrl}/aluno-turma`
@@ -33,13 +32,14 @@ export class AlunoService {
     return this.http.get<Aluno>(url)
 
   }
-  cadastrarAluno(aluno:Aluno,id_turma:string):Observable<Turma>{
-    const url = `${this.baseUrl}/aluno?turma=${id_turma}`
-    return this.http.post<Turma>(url,aluno);
+
+  cadastrarAluno(aluno:Aluno):Observable<Aluno>{
+    const url = `${this.baseUrl}/aluno`
+    return this.http.post<Aluno>(url,aluno);
   }
 
-  editarAluno(aluno:Aluno,ra_aluno:String,id_turma:string):Observable<Aluno>{
-    const url = `${this.baseUrl}/aluno/${ra_aluno}/?turma=${id_turma}`
+  editarAluno(aluno:Aluno,ra_aluno:String):Observable<Aluno>{
+    const url = `${this.baseUrl}/aluno/${ra_aluno}`
     return this.http.put<Aluno>(url,aluno)
   }
 
@@ -47,5 +47,21 @@ export class AlunoService {
     const url = `${this.baseUrl}/aluno/${ra_aluno}`
     return this.http.delete<void>(url)
   }
+
+  atribuirTurma(turma:Turma, ra_aluno:String):Observable<Aluno>{
+
+    //http://localhost:8080/escola/aluno/inserirTurma/8
+    const url = `${this.baseUrl}/aluno/inserirTurma/${ra_aluno}`
+    return this.http.put<Aluno>(url,turma)
+
+  }
+
+  deixarAlunoSemTurma(aluno:Aluno, ra_aluno:String):Observable<Aluno>{
+    //http://localhost:8080/escola/aluno/deixarSemTurma/4
+    const url = `${this.baseUrl}/aluno/deixarSemTurma/${ra_aluno}`
+    return this.http.put<Aluno>(url,aluno)
+  }
+
+
 
 }

@@ -1,0 +1,38 @@
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Professores da Escola:</h5>
+    <button class="btn btn-danger" >Cadastrar professor</button>
+   <div style="height: 300px; overflow: auto;">
+    <table class="table">
+      <thead>
+        <tr >
+          <th scope="col">Código</th>
+          <th scope="col">Nome do professor</th>
+          <th scope="col">Formação</th>
+          <th scope="col">Nome da Turma</th>
+          <th scope="col">Descrição da Turma</th>
+          <th scope="col">Atribuir Turma</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let professor of professores ">
+          <th scope="row">{{professor.id_professor}}</th>
+          <td>{{professor.pro_nome}}</td>
+          <td>{{professor.pro_formacao}}</td>
+          <td>{{professor.tu_nome}}</td>
+          <td>{{professor.tu_descricao}}</td>
+          <td><i routerLink="/professor/atribuirTurma/{{professor.id_professor}}" class="fa-solid fa-book-open"></i></td>
+          <td><i class="fas fa-edit text-info" ></i>
+              <i class="fas fa-trash-alt text-danger mx-2" ></i>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+
+
+

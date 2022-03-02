@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dados da Turma</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nome da Turma</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="turma.tu_nome" name="tu_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descrição da Turma</label>
+              <input type="text"readonly class="form-control" [(ngModel)]="turma.tu_descricao" name="tu_descricao">
+            </div>
+            <button routerLink="/turma" class="btn btn-secondary mx-3">Cancelar</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <h5 class="card-title mx-3">Professor da Turma: {{professor.id_professor}}</h5>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label">Nome do Professor</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="professor.pro_nome" name="pro_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Formação do Professor</label>
+            <input type="text"readonly class="form-control" [(ngModel)]="professor.pro_formacao" name="pro_formacao">
+          </div>
+          <hr>
+          <div class="card">
+          <h5 class="card-title my-4"> Escolha um novo professor para a turma:</h5>
+
+
+          <div class="card-body">
+          <select [(ngModel)]="professorSemTurmaEscolhido" name="professorSemTurmaEscolhido" (ngModelChange)="mostrarProfessor()" >
+              <option *ngFor="let professor of professoresSemTurma" [ngValue]="professor">
+                {{professor.pro_nome}} - {{professor.pro_formacao}}
+              </option>
+            </select>
+            <button (click)="atribuirProfessor()" class="btn btn-primary mx-3">Salvar</button>
+          </div>
+        </div>
+          <hr>
+          <div class="card my-3">
+            <h5 class="card-title">Deixar Turma sem Professor?</h5>
+            <div class="card-body">
+            <button (click)=" deixarTurmaSemProfessor()" class="btn btn-secondary">Confirmar</button>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dados do Aluno</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nome do Aluno</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="aluno.al_nome" name="al_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nome do responsável pelo aluno</label>
+              <input type="text"readonly class="form-control"  [(ngModel)]="aluno.al_responsavel" name="al_responsavel">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Cidade do aluno</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="aluno.al_cidade" name="al_cidade">
+            </div>
+            <button  routerLink="/alunosComTurma" class="btn btn-secondary mx-3">Cancelar</button>
+          </form>
+          <hr>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <h5 class="card-title mx-3">Turma do Aluno: {{turmaEscolhida.id_turma}} </h5>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label">Nome da Turma</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="turmaEscolhida.tu_nome" name="tu_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nome do responsável pelo aluno</label>
+            <input type="text"readonly class="form-control"  [(ngModel)]="turmaEscolhida.tu_descricao" name="tu_descricao">
+          </div>
+          <hr>
+          <h5 class="card-title"> Escolha nova turma para o aluno:</h5>
+
+          <hr>
+          <select [(ngModel)]="turmaEscolhida" name="turmaEscolhida" (ngModelChange)="mostrarTurma()" >
+            <option *ngFor="let turma of turmas" [ngValue]="turma">
+              {{turma.tu_nome}} - {{turma.tu_descricao}}
+            </option>
+          </select>
+          <button (click)="atribuirTurma()" class="btn btn-primary mx-3">Salvar</button>
+          <hr>
+          <div class="card">
+            <h5 class="card-title">Deixar Aluno sem turma?
+              <button (click)="deixarAlunoSemTurma()" class="btn btn-secondary mx-3">Confirmar</button>
+            </h5>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
