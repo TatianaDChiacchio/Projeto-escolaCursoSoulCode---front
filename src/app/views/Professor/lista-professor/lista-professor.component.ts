@@ -40,13 +40,12 @@ export class ListaProfessorComponent implements OnInit {
         professorComTurma.id_professor = professor[0]
         professorComTurma.pro_nome = professor[1]
         professorComTurma.pro_formacao = professor[2]
-        if(professor[4] != null){
-          professorComTurma.id_turma = professor[4]
+        if(professor[3] != null){
+          professorComTurma.id_turma = professor[3]
           professorComTurma.tu_nome = professor[4]
-          console.log(professor[3])
           professorComTurma.tu_descricao = professor[5]
         }else{
-          professorComTurma.id_turma = 1
+          professorComTurma.id_turma = 0
           professorComTurma.tu_nome = "----"
           professorComTurma.tu_descricao = "----"
         }

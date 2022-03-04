@@ -1,0 +1,25 @@
+<h2 class="titulo mt-4">NOSSOS PROFESSORES</h2>
+<div class="container mt-3">
+  <div class="row">
+      <div class="col-2 mx-3 my-3 bg-light text-center w-20 rounded card d-flex float-left" style="box-shadow: rgb(2, 38, 44) 1px 1px 13px 3px;"
+          *ngFor="let professor of professores">
+          <div class="g-0">
+              <p class="card-title" style="font-weight: 900; color: rgb(4, 14, 75)">
+                  {{ professor.pro_nome}}</p>
+
+                <p><img src="{{professor.pro_foto}}"></p>
+
+
+
+
+              <div>
+                  <div class="card-body">
+                      <h6 class="card-title text-danger">{{professor.pro_formacao}}</h6>
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

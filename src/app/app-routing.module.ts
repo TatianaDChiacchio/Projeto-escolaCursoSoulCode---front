@@ -1,3 +1,4 @@
+import { ListaCardsProfessorComponent } from './views/Professor/lista-cards-professor/lista-cards-professor.component';
 import { AtribuirTurmaAoProfessorComponent } from './views/Professor/atribuir-turma-ao-professor/atribuir-turma-ao-professor.component';
 import { AtribuirTurmaComponent } from './views/Aluno/atribuir-turma/atribuir-turma.component';
 //import { ListaAlunoComTurmaComponent } from './componentes/lista-aluno-com-turma/lista-aluno-com-turma.component';
@@ -17,6 +18,7 @@ import { ListaTurmaComponent } from './views/Turma/lista-turma/lista-turma.compo
 import { HomeComponent } from './Templates/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastrarProfessorComponent } from './views/Professor/cadastrar-professor/cadastrar-professor.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
@@ -29,9 +31,11 @@ const routes: Routes = [
   {path:"aluno/edicao/:ra_aluno", component:EditarAlunoComponent},
   {path:"aluno/delete/:ra_aluno", component:DeleteAlunoComponent},
   {path:"alunosComTurma", component:ListaAlunoComTurmaComponent},
+  {path:"professor/cadastro", component:CadastrarProfessorComponent},
   {path:"professorDaTurma/:id_turma", component:ProfessorDaTurmaComponent},
   {path:"professor/listaProfessor", component:ListaProfessorComponent},
   {path:"professor/atribuirTurma/:id_professor", component:AtribuirTurmaAoProfessorComponent},
+  {path:"professor/listaCards", component:ListaCardsProfessorComponent},
   //{path:"aluno/cadastro", component:CadastroAlunoComponent},
   {path:"aluno/lista", component:ListaAlunoComponent},
   {path:"aluno/listaDaTurma/:id_turma", component:ListaAlunosDaTurmaComponent},

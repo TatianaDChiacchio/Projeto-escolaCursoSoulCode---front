@@ -22,6 +22,9 @@ import { ListaProfessorComponent } from './views/Professor/lista-professor/lista
 import { ListaAlunosDaTurmaComponent } from './views/Aluno/lista-alunos-da-turma/lista-alunos-da-turma.component';
 import { AtribuirTurmaComponent } from './views/Aluno/atribuir-turma/atribuir-turma.component';
 import { AtribuirTurmaAoProfessorComponent } from './views/Professor/atribuir-turma-ao-professor/atribuir-turma-ao-professor.component';
+import { ListaCardsProfessorComponent } from './views/Professor/lista-cards-professor/lista-cards-professor.component';
+import { SafePipe } from './pipe/safe-pipe.pipe';
+import { CadastrarProfessorComponent } from './views/Professor/cadastrar-professor/cadastrar-professor.component';
 
 
 
@@ -45,6 +48,9 @@ import { AtribuirTurmaAoProfessorComponent } from './views/Professor/atribuir-tu
     ListaAlunosDaTurmaComponent,
     AtribuirTurmaComponent,
     AtribuirTurmaAoProfessorComponent,
+    ListaCardsProfessorComponent,
+    SafePipe,
+    CadastrarProfessorComponent,
 
   ],
   imports: [

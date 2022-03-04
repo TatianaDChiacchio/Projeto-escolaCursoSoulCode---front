@@ -25,6 +25,11 @@ export class ProfessorService {
     return this.http.get<Professor>(url)
   }
 
+  buscarProfessorPeloNome(pro_nome:String):Observable<Professor>{
+    const url = `${this.baseUrl}/professor-nome/${pro_nome}`
+    return this.http.get<Professor>(url)
+  }
+
   buscarProfessoresSemTurma():Observable<Professor[]>{
     //http://localhost:8080/escola/professorSemTurma
 
@@ -38,6 +43,16 @@ export class ProfessorService {
     return this.http.get<any>(url)
   }
 
+  cadastrarProfessor(professor:Professor):Observable<Professor>{
+    const url = `${this.baseUrl}/professor`
+    return this.http.post<Professor>(url,professor);
+  }
+
+  buscarTodosProfessores2():Observable<any>{
+
+    const url = `${this.baseUrl}/professor`
+    return this.http.get<any>(url)
+  }
 
 
 }
