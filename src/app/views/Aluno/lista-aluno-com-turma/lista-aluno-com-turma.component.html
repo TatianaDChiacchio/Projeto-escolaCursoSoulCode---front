@@ -1,37 +1,38 @@
-<div class="card" >
+<div class="card">
   <div class="card-body">
     <h5 class="card-title">Alunos da Escola:</h5>
-    <button routerLink="/aluno/cadastrar" class="btn btn-danger" >Cadastrar aluno</button>
-   <div style="height: 300px; overflow: auto;">
-    <table class="table">
-      <thead>
-        <tr >
-          <th scope="col">RA do aluno</th>
-          <th scope="col">Nome do aluno</th>
-          <th scope="col">Cidade</th>
-          <th scope="col">Nome da Turma</th>
-          <th scope="col">Descrição da Turma</th>
-          <th scope="col">Atribuir Turma</th>
-          <th scope="col">Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor = "let aluno of alunos">
-          <th scope="row">{{aluno.ra_aluno}}</th>
-          <td>{{aluno.al_nome}}</td>
-          <td>{{aluno.al_cidade}}</td>
-          <td>{{aluno.tu_nome}}</td>
-          <td>{{aluno.tu_descricao}}</td>
-          <td><button routerLink="/aluno/atribuirTurma/{{aluno.ra_aluno}}/{{aluno.id_turma}}" class="btn btn-danger">Turma</button></td>
-          <td><i routerLink="/aluno/edicao/{{aluno.ra_aluno}}" class="fas fa-edit text-info" ></i>
-              <i routerLink="/aluno/delete/{{aluno.ra_aluno}}" class="fas fa-trash-alt text-danger mx-2" ></i>
-          </td>
-        </tr>
+    <button routerLink="/aluno/cadastrar" class="btn btn-danger">Cadastrar aluno</button>
+    <div style="height: 300px; overflow: auto;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">RA do aluno</th>
+            <th scope="col">Nome do aluno</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Nome da Turma</th>
+            <th scope="col">Descrição da Turma</th>
+            <th scope="col">Atribuir Turma</th>
+            <th scope="col">Boletos</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let aluno of alunos">
+            <th scope="row">{{aluno.ra_aluno}}</th>
+            <td>{{aluno.al_nome}}</td>
+            <td>{{aluno.al_cidade}}</td>
+            <td>{{aluno.tu_nome}}</td>
+            <td>{{aluno.tu_descricao}}</td>
+            <td><button routerLink="/aluno/atribuirTurma/{{aluno.ra_aluno}}/{{aluno.id_turma}}"
+                class="btn btn-danger">Turma</button></td>
+            <td><i routerLink="/boleto/listaPorAluno/{{aluno.ra_aluno}}" class="fa-solid fa-coins"></i></td>
+            <td><i routerLink="/aluno/edicao/{{aluno.ra_aluno}}" class="fas fa-edit text-info"></i>
+              <i routerLink="/aluno/delete/{{aluno.ra_aluno}}" class="fas fa-trash-alt text-danger mx-2"></i>
+            </td>
+          </tr>
 
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-
-

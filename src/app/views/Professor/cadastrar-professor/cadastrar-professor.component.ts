@@ -56,7 +56,7 @@ export class CadastrarProfessorComponent implements OnInit {
 
       const nome:string = this.professor.pro_nome + "-" + event.target.files[0].name
 
-
+      //`http://` + localBanco + `:8080/arrozApp/send/?nome=` + nomeFoto
       //http://localhost:8080/escola/envio/3?nome=yyyyyyyyy
       this.http.post(`http://localhost:8080/escola/envio/${this.idProfessorCadastrado}?nome=${nome}`,formData).subscribe({
         next: () => console.log("Foto enviada")

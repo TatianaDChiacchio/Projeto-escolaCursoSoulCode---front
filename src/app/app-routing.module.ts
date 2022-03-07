@@ -1,3 +1,7 @@
+import { ExclusaoBoletoComponent } from './views/Boleto/exclusao-boleto/exclusao-boleto.component';
+import { EdicaoBoletoComponent } from './views/Boleto/edicao-boleto/edicao-boleto.component';
+import { ListaBoletoAlunoComponent } from './views/Boleto/lista-boleto-aluno/lista-boleto-aluno.component';
+import { CadastroBoletoComponent } from './views/Boleto/cadastro-boleto/cadastro-boleto.component';
 import { ListaCardsProfessorComponent } from './views/Professor/lista-cards-professor/lista-cards-professor.component';
 import { AtribuirTurmaAoProfessorComponent } from './views/Professor/atribuir-turma-ao-professor/atribuir-turma-ao-professor.component';
 import { AtribuirTurmaComponent } from './views/Aluno/atribuir-turma/atribuir-turma.component';
@@ -16,7 +20,7 @@ import { DeleteTurmaComponent } from './views/Turma/delete-turma/delete-turma.co
 import { CadastroTurmaComponent } from './views/Turma/cadastro-turma/cadastro-turma.component';
 import { ListaTurmaComponent } from './views/Turma/lista-turma/lista-turma.component';
 import { HomeComponent } from './Templates/home/home.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarProfessorComponent } from './views/Professor/cadastrar-professor/cadastrar-professor.component';
 
@@ -40,7 +44,11 @@ const routes: Routes = [
   {path:"aluno/lista", component:ListaAlunoComponent},
   {path:"aluno/listaDaTurma/:id_turma", component:ListaAlunosDaTurmaComponent},
   {path:"aluno/cadastrar", component:CadastroAlunoComponent},
-  {path:"aluno/atribuirTurma/:ra_aluno/:id_turma", component:AtribuirTurmaComponent}
+  {path:"aluno/atribuirTurma/:ra_aluno/:id_turma", component:AtribuirTurmaComponent},
+  {path:"boleto/cadastro/:ra_aluno", component:CadastroBoletoComponent},
+  {path:"boleto/listaPorAluno/:ra_aluno", component:ListaBoletoAlunoComponent},
+  {path:"boleto/edicao/:codigo/:ra_aluno", component:EdicaoBoletoComponent},
+  {path:"boleto/exclusao/:codigo/:ra_aluno", component:ExclusaoBoletoComponent}
 ];
 
 @NgModule({

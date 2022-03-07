@@ -1,7 +1,11 @@
-import { NgModule } from '@angular/core';
+import { ListaBoletoAlunoComponent } from './views/Boleto/lista-boleto-aluno/lista-boleto-aluno.component';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { CommonModule, CurrencyPipe } from '@angular/common';
+
+import { NgxCurrencyModule } from "ngx-currency";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,8 +27,16 @@ import { ListaAlunosDaTurmaComponent } from './views/Aluno/lista-alunos-da-turma
 import { AtribuirTurmaComponent } from './views/Aluno/atribuir-turma/atribuir-turma.component';
 import { AtribuirTurmaAoProfessorComponent } from './views/Professor/atribuir-turma-ao-professor/atribuir-turma-ao-professor.component';
 import { ListaCardsProfessorComponent } from './views/Professor/lista-cards-professor/lista-cards-professor.component';
-import { SafePipe } from './pipe/safe-pipe.pipe';
 import { CadastrarProfessorComponent } from './views/Professor/cadastrar-professor/cadastrar-professor.component';
+import { CadastroBoletoComponent } from './views/Boleto/cadastro-boleto/cadastro-boleto.component';
+import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import {registerLocaleData} from '@angular/common';
+import { EdicaoBoletoComponent } from './views/Boleto/edicao-boleto/edicao-boleto.component';
+import { ExclusaoBoletoComponent } from './views/Boleto/exclusao-boleto/exclusao-boleto.component';
+registerLocaleData(localePt)
+
+
 
 
 
@@ -49,17 +61,29 @@ import { CadastrarProfessorComponent } from './views/Professor/cadastrar-profess
     AtribuirTurmaComponent,
     AtribuirTurmaAoProfessorComponent,
     ListaCardsProfessorComponent,
-    SafePipe,
     CadastrarProfessorComponent,
+    CadastroBoletoComponent,
+    ListaBoletoAlunoComponent,
+    EdicaoBoletoComponent,
+    ExclusaoBoletoComponent,
+
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    NgxCurrencyModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: "pt-BR"
+  },
+                { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+                CurrencyPipe ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

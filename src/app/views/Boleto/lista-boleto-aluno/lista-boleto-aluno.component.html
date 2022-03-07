@@ -1,0 +1,41 @@
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Aluno: {{ra_aluno}} - {{nomeAluno}}</h5>
+    <button routerLink="/boleto/cadastro/{{ra_aluno}}" class="btn btn-danger" >Cadastrar boleto</button>
+   <div style="height: 300px; overflow: auto;">
+    <table class="table">
+      <thead>
+        <tr >
+          <th scope="col">Codigo</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Data de Vencimento</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Status</th>
+          <th scope="col" colspan="2">Quitar/Cancelar</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let boleto of boletos">
+          <th scope="row">{{boleto.codigo}}</th>
+          <td>{{boleto.bo_descricao}}</td>
+          <td>{{boleto.bo_dataVencimento | date : 'dd/MM/yyyy' }}</td>
+          <td>{{boleto.bo_valor | currency:'BRL'}}</td>
+          <td>{{boleto.bo_status}}</td>
+          <td><button (click)="quitarBoleto(boleto.codigo)" *ngIf="boleto.bo_status == 'PENDENTE'" class="btn btn-success mx-3">Q</button>
+          <td><button (click)="cancelarrBoleto(boleto.codigo)" *ngIf="boleto.bo_status == 'PENDENTE'"class="btn btn-danger">C</button></td>
+          <td><i routerLink="/boleto/edicao/{{boleto.codigo}}/{{ra_aluno}}" class="fas fa-edit text-info" ></i>
+              <i routerLink="/boleto/exclusao/{{boleto.codigo}}/{{ra_aluno}}" class="fas fa-trash-alt text-danger mx-2" ></i>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button routerLink="/alunosComTurma" class="btn btn-secondary">Voltar</button>
+  </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Edição de Boleto</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        <input type="text" class="form-control" [(ngModel)]="boleto.bo_descricao" name="bo_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Data de Vencimento</label>
+        <input type="date" class="form-control" [(ngModel)]="boleto.bo_dataVencimento"  name="bo_dataVencimento" >
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Valor</label>
+        <input type="text"  class="form-control" [(ngModel)]="boleto.bo_valor" name="bo_valor"  currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="boleto.bo_status" name="bo_status">
+      </div>
+      <button (click)="editarBoleto()" class="btn btn-primary ">Salvar</button>
+      <button class="btn btn-secondary mx-3">Cancelar</button>
+    </form>
+
+  </div>
+</div>
+
+
+

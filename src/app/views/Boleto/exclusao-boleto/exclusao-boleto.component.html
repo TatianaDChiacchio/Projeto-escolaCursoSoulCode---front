@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Edição de Boleto</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="boleto.bo_descricao" name="bo_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Data Vencimento</label>
+        <input type="date" class="form-control" readonly [(ngModel)]="boleto.bo_dataVencimento" name="bo_dataVencimento">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Valor</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="boleto.bo_valor " name="bo_valor" >
+      </div>
+
+      <button (click)="excluirBoleto()" class="btn btn-primary ">Excluir</button>
+      <button routerLink="/boleto/listaPorAluno/{{ra_aluno}}" class="btn btn-secondary mx-3">Cancelar</button>
+
+    </form>
+    <hr>
+
+  </div>
+
+
+
+
+
